@@ -741,3 +741,46 @@ footer .brand .logo-full { width: 230px; }
   .member-flip .member-name { left: -8px; right: 12px; }
 }
 .member-win .win-body svg.member-art { position: relative; width: 100%; height: 100%; align-self: stretch; }
+/* hero tagline + service line */
+.hero-lede { font-size: clamp(32px, 4.4vw, 60px); max-width: none; margin-bottom: 14px; }
+.hero-svc-line { display: flex; flex-wrap: wrap; justify-content: center; gap: 6px 0; margin: 0 0 26px; font-weight: 700; font-size: clamp(15px, 1.6vw, 20px); letter-spacing: .06em; text-transform: uppercase; color: var(--indigo); }
+.hero-svc-line span + span::before { content: "✦"; margin: 0 14px; color: var(--blue); font-size: .8em; }
+@media (max-width: 560px) { .hero-svc-line { font-size: 12.5px; letter-spacing: .04em; flex-wrap: nowrap; } .hero-svc-line span + span::before { margin: 0 7px; } }
+
+/* ---------- digital marketing hero: camera in a window ---------- */
+.dm-shot { position: relative; width: clamp(260px, 28vw, 380px); justify-self: end; margin: 8px 24px 20px 0; transform: rotate(3deg); }
+.dm-shot-body { aspect-ratio: 1; display: grid; place-items: center; padding: 18px; background-color: var(--butter); }
+.dm-shot-body img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(6px 7px 0 rgba(23, 25, 63, .3)); transform: rotate(-6deg); }
+.dm-shot .tagp { position: absolute; top: 58px; left: -26px; z-index: 3; background: var(--paper); color: var(--ink); border: var(--line); border-radius: 999px; padding: 5px 14px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; transform: rotate(-10deg); }
+/* Windows 95 style "Start" button */
+.btn95 { position: absolute; right: -18px; bottom: -22px; z-index: 3; display: inline-block; padding: 10px 26px; background: #C0C0C0; color: #000; text-decoration: none;
+  font-family: "Courier New", monospace; font-weight: 700; font-size: 17px; letter-spacing: .02em;
+  border: 3px solid #000; box-shadow: inset 3px 3px 0 #fff, inset -3px -3px 0 #808080, 4px 4px 0 var(--ink); transform: rotate(-4deg); }
+.btn95:hover { background: var(--lime); }
+.btn95:active { box-shadow: inset -3px -3px 0 #fff, inset 3px 3px 0 #808080; transform: rotate(-4deg) translate(2px, 2px); }
+
+/* ---------- digital marketing: mobile redesign ---------- */
+.swipe-hint { display: none; }
+@media (max-width: 760px) {
+  .ph-blue { padding-bottom: 56px; }
+  .ph-blue .pills { justify-content: flex-start; }
+  .dm-shot { grid-row: auto; justify-self: center; width: min(78%, 320px); margin: 26px 0 16px; }
+  .swipe-hint { display: block; margin: 18px 0 -6px; font-size: 13px; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--indigo); }
+  /* plans become a swipeable carousel with a peek of the next card */
+  .plans { display: grid; grid-auto-flow: column; grid-template-columns: none; grid-auto-columns: 84%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; padding: 18px 4px 22px; margin-inline: calc(-1 * var(--gut)); padding-inline: var(--gut); scrollbar-width: none; }
+  .plans::-webkit-scrollbar { display: none; }
+  .plan { scroll-snap-align: center; }
+  .plan:hover { transform: none; box-shadow: none; }
+  /* sticky first column on the comparison table */
+  .compare th:first-child, .compare td:first-child { position: sticky; left: 0; z-index: 1; background: inherit; }
+  .compare thead th:first-child { background: var(--indigo); }
+  .compare tbody tr:nth-child(odd) > *:first-child { background: var(--paper); }
+  .compare tbody tr:nth-child(even) > *:first-child { background: var(--mist); }
+  .compare tbody th { width: 42%; font-size: 14px; }
+  .compare { min-width: 560px; }
+  .band { text-align: center; justify-items: center; }
+  .band .q-sticker { width: 90px; }
+  .cta-megaphone { display: block; width: 110px; top: 14px; right: 14px; }
+}
+@media (max-width: 760px) { .cta-megaphone { top: auto; bottom: 16px; right: 12px; width: 96px; opacity: .95; } .ph-blue + section, .cta p { position: relative; } .cta .mail { position: relative; z-index: 2; } }
+@media (max-width: 760px) { .cta-megaphone { display: none; } }
