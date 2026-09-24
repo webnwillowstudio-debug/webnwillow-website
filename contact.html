@@ -1,0 +1,93 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Contact · webnwillow</title>
+<meta name="description" content="Contact webnwillow about a website, app, marketing plan or IT support.">
+<link rel="icon" href="assets/webnwillow-mark.svg" type="image/svg+xml">
+<link rel="preload" href="assets/fonts/bricolage-grotesque.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/big-shoulders-display.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/site.css">
+</head>
+<body data-page="contact">
+<div class="site">
+  <div id="site-header"></div>
+
+  <main>
+    <section class="phero ph-butter wrap">
+      <svg class="spark" aria-hidden="true"><use href="#spark"/></svg>
+      <div>
+        <div class="eyebrow">Contact</div>
+        <h1 class="cond">Let's talk</h1>
+        <p class="lede">Tell us what you want to build, fix or grow. We'll reply with next steps and a rough estimate.</p>
+      </div>
+      <div class="art" style="width:clamp(260px,30vw,400px)"><div class="bg shape-scallop" style="top:0;border:0;background:var(--blue)"></div><span class="tagp">Say hi!</span><img src="assets/img/cj-camera.png" alt="Man filming with a video camera, giving a thumbs up" width="735" height="586"></div>
+    </section>
+
+    <section class="section wrap svcs-bg">
+      <div class="contact-grid">
+        <form class="form" id="contactForm">
+          <label>Your name<input name="name" autocomplete="name" required></label>
+          <label>Email<input name="email" type="email" autocomplete="email" required></label>
+          <label>Phone / WhatsApp <small>(optional)</small><input name="phone" type="tel" autocomplete="tel"></label>
+          <label>Service
+            <select name="service">
+              <option value="">Not sure yet</option>
+              <optgroup label="Web development">
+                <option>Shopify websites</option>
+                <option>Single page websites</option>
+                <option>Custom websites</option>
+                <option>E-commerce websites</option>
+                <option>Classifieds &amp; listing sites</option>
+                <option>Website maintenance &amp; revamp</option>
+              </optgroup>
+              <optgroup label="App development">
+                <option>Android apps</option>
+                <option>iOS apps</option>
+                <option>Cross-platform apps (Flutter)</option>
+                <option>Desktop apps</option>
+                <option>App maintenance &amp; updates</option>
+              </optgroup>
+              <optgroup label="Digital marketing">
+                <option>Sprout plan</option>
+                <option>Bloom plan</option>
+                <option>Canopy plan</option>
+              </optgroup>
+              <optgroup label="IT support">
+                <option>Hosting &amp; server support</option>
+                <option>Troubleshooting</option>
+                <option>Security updates</option>
+                <option>Domain &amp; email setup</option>
+                <option>Tech consultation</option>
+              </optgroup>
+            </select>
+          </label>
+          <label class="full">Tell us about your project<textarea name="message" required placeholder="What do you need, and by when?"></textarea></label>
+          <button class="pill-ink" type="submit">Send message <svg aria-hidden="true"><use href="#i-arrow"/></svg></button>
+          <p class="note-sm">This opens your email app with the message filled in.</p>
+        </form>
+
+        <div class="cards">
+          <div class="ccard b">
+            <div class="ico leaf" style="--bg:var(--indigo);--fg:var(--butter)"><svg aria-hidden="true"><use href="#s-mail"/></svg></div>
+            <div><h3>Email</h3><p><a data-email href="#">Email us</a></p><p><button class="copy" type="button" data-copy style="margin-top:8px">Copy email</button></p></div>
+          </div>
+          <div class="ccard m">
+            <img class="ccard-img" src="assets/img/icon-pin.png" alt="" width="533" height="700">
+            <div><h3>Where we work</h3><p>Serving clients across the UAE, India &amp; beyond, remotely and on your time zone.</p></div>
+          </div>
+          <div class="ccard dark">
+            <div class="ico shape-burst" style="--bg:var(--butter)"><svg aria-hidden="true"><use href="#s-heart"/></svg></div>
+            <div><h3>Follow along</h3><div class="socials-lg" data-socials></div></div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <div id="site-footer"></div>
+</div>
+<script src="assets/js/site.js"></script>
+</body>
+</html>
