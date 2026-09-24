@@ -263,6 +263,14 @@
   root.setProperty('--burst', poly(44, function (i) { return i % 2 ? 41 : 50; }));
   root.setProperty('--scallop', poly(180, function (i, a) { return 46 + 4 * Math.abs(Math.cos(a * 7)); }));
 
+  // ----- pause looping animations while they are off-screen -----
+  if ('IntersectionObserver' in window) {
+    var io = new IntersectionObserver(function (entries) {
+      entries.forEach(function (e) { e.target.classList.toggle('is-offscreen', !e.isIntersecting); });
+    }, { rootMargin: '100px' });
+    document.querySelectorAll('.ticker, .tagband, .hero, .cta, .spark, .flower, .hang-phone').forEach(function (el) { io.observe(el); });
+  }
+
   // ----- mobile menu -----
   var btn = document.querySelector('.menu-btn'), nav = document.getElementById('primary-nav');
   if (btn && nav) btn.addEventListener('click', function () {

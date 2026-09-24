@@ -41,10 +41,15 @@ body {
   line-height: 1.5;
   padding: clamp(0px, 4vw, 64px);
   background-color: var(--indigo);
+}
+/* Striped backdrop on its own GPU layer: stays put without repainting the page on every scroll
+   (background-attachment: fixed forced a full repaint per frame). */
+body::before {
+  content: ""; position: fixed; inset: 0; z-index: -1; pointer-events: none;
   background-image: repeating-linear-gradient(135deg,
     var(--indigo) 0 70px, var(--ink) 70px 73px,
     var(--butter) 73px 143px, var(--ink) 143px 146px);
-  background-attachment: fixed;
+  transform: translateZ(0); will-change: transform;
 }
 a { color: inherit; }
 button, input, select, textarea { font: inherit; color: inherit; }
@@ -842,3 +847,44 @@ footer .brand .logo-full { width: 230px; }
 }
 @media (max-width: 760px) { .fan, .grow-list { justify-content: start !important; } .plans-cam { margin-bottom: 40px; } }
 @media (max-width: 760px) { .about { gap: 44px; } }
+.member + .member { margin-top: clamp(80px, 9vw, 120px); }
+.member-name[style*="--butter"] { box-shadow: 4px 4px 0 var(--ink); }
+@media (max-width: 760px) { .member + .member { margin-top: 64px; } }
+/* Ahmmed photo + small sticker */
+.member-stickers.mini { position: absolute; top: 6%; right: 5%; width: 26%; }
+.member-stickers.mini svg { width: 100%; transform: rotate(10deg); }
+.member-flip .win-body { place-items: end center; }
+/* web dev hero: desk illustration */
+.phero .web-art { width: clamp(300px, 36vw, 500px); margin-bottom: calc(-1 * clamp(30px, 4vw, 60px)); }
+.phero .web-art .bg { top: 12%; left: 8%; right: 8%; border-bottom: var(--line); }
+/* IT hero: retro PC window */
+.it-shot { transform: rotate(-3deg); width: clamp(240px, 24vw, 330px); }
+.it-shot-body { aspect-ratio: 900 / 1150; overflow: hidden; }
+.it-shot-body img { display: block; width: 100%; height: 100%; object-fit: cover; object-position: top; }
+.it-shot .tagp { left: auto; right: -22px; top: 70px; transform: rotate(8deg); }
+.it-shot .btn95 { right: auto; left: -18px; }
+@media (max-width: 760px) { .phero .web-art { width: min(92%, 380px); margin-bottom: -40px; } .it-shot { width: min(74%, 290px); justify-self: center; margin: 26px 0 16px; } }
+
+/* ---------- performance ---------- */
+/* Skip layout/paint for sections far off-screen until they come near the viewport. */
+main > section:not(:first-child), main > nav, main > div.tagband, footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }
+/* Keep looping animations on their own compositor layers. */
+.ticker-track, .tagtrack, .flower, .spark, .hang-phone { will-change: transform; }
+/* Paused when off-screen (toggled by site.js). */
+.is-offscreen, .is-offscreen * { animation-play-state: paused !important; }
+/* Cheaper hover shadows on touch devices: no hover there anyway. */
+@media (hover: none) { .svc:hover, .plan:hover, .sv:hover, .ocard:hover { transform: none; } }
+/* small phones (iPhone ~375-390px) */
+.hero-svc-line span { white-space: nowrap; }
+@media (max-width: 560px) {
+  .hero-svc-line { font-size: clamp(10.5px, 3.05vw, 13px); letter-spacing: .02em; }
+  .hero-svc-line span + span::before { margin: 0 clamp(4px, 1.4vw, 7px); }
+  .hero-kicker { font-size: clamp(10px, 2.9vw, 12px); letter-spacing: .08em; gap: 7px; }
+  .hero-kicker .dot { width: 8px; height: 8px; flex: none; }
+}
+@media (max-width: 440px) {
+  .nav { flex-wrap: nowrap; gap: 10px; padding-right: calc(var(--gut) + 62px); }
+  .brand .logo-full { width: clamp(118px, 36vw, 150px); }
+  .menu-btn { padding: 6px 12px; font-size: 13px; margin-left: auto; }
+  .corner { width: 58px; height: 58px; font-size: 12px; }
+}
