@@ -411,7 +411,7 @@ footer .f-mail { display: inline-block; margin-top: 14px; font-weight: 700; font
 /* cut-out standing on the bottom edge of an inner page hero, with a shape behind it */
 .phero .art { position: relative; width: clamp(220px, 28vw, 380px); align-self: end; justify-self: end; margin-bottom: calc(-1 * clamp(40px, 6vw, 80px)); }
 .phero .art .bg { position: absolute; left: 4%; right: 4%; bottom: 0; top: 22%; border: var(--line); border-bottom: 0; background: var(--lime); }
-.phero .art img { position: relative; display: block; width: 100%; height: auto; filter: drop-shadow(8px 8px 0 rgba(23, 25, 63, .35)); }
+.phero .art img { position: relative; display: block; width: 100%; height: auto; }
 .phero .art .tagp { position: absolute; top: 12%; left: -8%; z-index: 2; background: var(--paper); color: var(--ink); border: var(--line); border-radius: 999px; padding: 5px 14px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; transform: rotate(-8deg); white-space: nowrap; }
 /* framed photo in any shape */
 .photo { position: relative; overflow: hidden; border: var(--line); background: var(--ink); }
@@ -420,7 +420,7 @@ footer .f-mail { display: inline-block; margin-top: 14px; font-weight: 700; font
 .band .photo { width: clamp(120px, 14vw, 180px); aspect-ratio: 1; }
 .about .pic img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
 /* floating cut-outs */
-.float-cut { position: absolute; pointer-events: none; z-index: 2; filter: drop-shadow(6px 6px 0 rgba(23, 25, 63, .3)); }
+.float-cut { position: absolute; pointer-events: none; z-index: 2; }
 .plans-sec { position: relative; }
 .plans-sec .float-cut { right: clamp(8px, 4vw, 60px); top: clamp(24px, 3.5vw, 50px); width: clamp(110px, 14vw, 200px); transform: rotate(8deg); z-index: 1; }
 .plans-sec .plans { position: relative; z-index: 2; }
@@ -535,7 +535,7 @@ footer .brand .logo-full { width: 230px; }
 /* about: newspaper reader in a window frame */
 .about-win { max-width: 480px; transform: rotate(-2deg); }
 .about-win .win-body { aspect-ratio: 5 / 6; display: grid; place-items: center; padding: 22px; background-color: var(--mist); }
-.about-win .win-body img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(5px 6px 0 rgba(23, 25, 63, .25)); }
+.about-win .win-body img { width: 100%; height: 100%; object-fit: contain; }
 .about .facts-wrap { display: flex; align-items: center; gap: 16px; margin-top: 18px; }
 .about .facts-wrap .facts { margin-top: 0; }
 .pin-sticker { width: 64px; height: auto; flex: none; transform: rotate(8deg); filter: drop-shadow(3px 4px 0 rgba(23, 25, 63, .2)); }
@@ -556,7 +556,7 @@ footer .brand .logo-full { width: 230px; }
 .member-win { position: relative; margin-bottom: 30px; }
 .member-win .win-body { position: relative; aspect-ratio: 1; display: grid; place-items: center; overflow: hidden; background-color: var(--mist); }
 .member-win .win-body .initial { position: absolute; font-family: var(--display); font-weight: 900; font-size: clamp(160px, 22vw, 300px); line-height: 1; color: rgba(54, 59, 150, .14); }
-.member-win .win-body img { position: relative; width: 78%; height: auto; transform: rotate(-6deg); filter: drop-shadow(6px 8px 0 rgba(23, 25, 63, .25)); }
+.member-win .win-body img { position: relative; width: 78%; height: auto; transform: rotate(-6deg); }
 .member-name { position: absolute; left: -36px; right: 24px; bottom: -26px; z-index: 3; display: flex; align-items: baseline; justify-content: space-between; gap: 12px; padding: 12px 22px; background: var(--lime); border: var(--line); box-shadow: 4px 4px 0 var(--ink); }
 .member-name b { font-family: var(--display); font-weight: 900; font-size: 34px; text-transform: uppercase; line-height: 1; }
 .member-name small { font-weight: 700; font-size: 13px; letter-spacing: .12em; text-transform: uppercase; }
@@ -726,7 +726,7 @@ footer .brand .logo-full { width: 230px; }
 .grow-num { top: -6px; left: -6px; }
 /* team photo: cut-out standing on the bottom of the window */
 .member-win .win-body { place-items: end center; }
-.member-win .win-body img.member-photo { width: 92%; transform: none; align-self: end; filter: drop-shadow(6px 0 0 rgba(23, 25, 63, .18)); }
+.member-win .win-body img.member-photo { width: 92%; transform: none; align-self: end; }
 .member-win .win-body .initial { top: 4%; left: 6%; }
 .member-win .win-body img.member-mega { position: absolute; top: 6%; right: 5%; width: 30%; transform: rotate(10deg); filter: drop-shadow(3px 4px 0 rgba(23, 25, 63, .25)); }
 .plan .ico svg { width: 84%; }
@@ -755,7 +755,7 @@ footer .brand .logo-full { width: 230px; }
 /* ---------- digital marketing hero: camera in a window ---------- */
 .dm-shot { position: relative; width: clamp(260px, 28vw, 380px); justify-self: end; margin: 8px 24px 20px 0; transform: rotate(3deg); }
 .dm-shot-body { aspect-ratio: 1; display: grid; place-items: center; padding: 18px; background-color: var(--butter); }
-.dm-shot-body img { width: 100%; height: 100%; object-fit: contain; filter: drop-shadow(6px 7px 0 rgba(23, 25, 63, .3)); transform: rotate(-6deg); }
+.dm-shot-body img { width: 100%; height: 100%; object-fit: contain; transform: rotate(-6deg); }
 .dm-shot .tagp { position: absolute; top: 58px; left: -26px; z-index: 3; background: var(--paper); color: var(--ink); border: var(--line); border-radius: 999px; padding: 5px 14px; font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .06em; transform: rotate(-10deg); }
 /* Windows 95 style "Start" button */
 .btn95 { position: absolute; right: -18px; bottom: -22px; z-index: 3; display: inline-block; padding: 10px 26px; background: #C0C0C0; color: #000; text-decoration: none;
@@ -793,7 +793,7 @@ footer .brand .logo-full { width: 230px; }
 /* ---------- home: camera window beside "Grow like a willow" ---------- */
 .plans-cam { position: absolute; top: clamp(36px, 5vw, 70px); right: clamp(24px, 5vw, 80px); width: clamp(170px, 17vw, 240px); transform: rotate(5deg); z-index: 1; }
 .plans-cam-body { aspect-ratio: 1; display: grid; place-items: center; padding: 12px; background-color: var(--butter); }
-.plans-cam-body img { width: 100%; height: 100%; object-fit: contain; transform: rotate(-6deg); filter: drop-shadow(4px 5px 0 rgba(23, 25, 63, .3)); }
+.plans-cam-body img { width: 100%; height: 100%; object-fit: contain; transform: rotate(-6deg); }
 .plans-sec .lede { max-width: 46ch; }
 .hero-stickers { display: none; }
 .m-only { display: none; }
@@ -866,8 +866,6 @@ footer .brand .logo-full { width: 230px; }
 @media (max-width: 760px) { .phero .web-art { width: min(92%, 380px); margin-bottom: -40px; } .it-shot { width: min(74%, 290px); justify-self: center; margin: 26px 0 16px; } }
 
 /* ---------- performance ---------- */
-/* Skip layout/paint for sections far off-screen until they come near the viewport. */
-main > section:not(:first-child), main > nav, main > div.tagband, footer { content-visibility: auto; contain-intrinsic-size: auto 900px; }
 /* Keep looping animations on their own compositor layers. */
 .ticker-track, .tagtrack, .flower, .spark, .hang-phone { will-change: transform; }
 /* Paused when off-screen (toggled by site.js). */
@@ -897,3 +895,6 @@ main > section:not(:first-child), main > nav, main > div.tagband, footer { conte
   .corner { top: 8px; transform: rotate(-10deg); }
 }
 @media (max-width: 760px) { .nav .pills.main.open { width: calc(100% + 62px); flex-basis: calc(100% + 62px); margin-right: -62px; } }
+
+/* Big photos: no filter shadow (costly to repaint); promote rotated photos to their own layer. */
+.member-win .win-body img, .dm-shot-body img, .plans-cam-body img, .about-win .win-body img, .phero .art img { backface-visibility: hidden; }

@@ -51,3 +51,9 @@ Icons
 To publish: upload this folder to any static host
 (Netlify drop, Vercel, GitHub Pages, cPanel public_html).
 The _old/ folder holds the previous one-page version and does not need uploading.
+
+Caching (vercel.json)
+- Images and logo SVGs are cached by browsers for 30 days, fonts for 1 year.
+- When you REPLACE an image file with the same name, bump its version in the HTML
+  (e.g. team-askar.webp?v=1 -> ?v=2) so visitors get the new one immediately.
+- HTML, CSS and JS are always re-checked, so page edits show up right away.
