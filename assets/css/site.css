@@ -784,3 +784,61 @@ footer .brand .logo-full { width: 230px; }
 }
 @media (max-width: 760px) { .cta-megaphone { top: auto; bottom: 16px; right: 12px; width: 96px; opacity: .95; } .ph-blue + section, .cta p { position: relative; } .cta .mail { position: relative; z-index: 2; } }
 @media (max-width: 760px) { .cta-megaphone { display: none; } }
+
+/* ---------- home: camera window beside "Grow like a willow" ---------- */
+.plans-cam { position: absolute; top: clamp(36px, 5vw, 70px); right: clamp(24px, 5vw, 80px); width: clamp(170px, 17vw, 240px); transform: rotate(5deg); z-index: 1; }
+.plans-cam-body { aspect-ratio: 1; display: grid; place-items: center; padding: 12px; background-color: var(--butter); }
+.plans-cam-body img { width: 100%; height: 100%; object-fit: contain; transform: rotate(-6deg); filter: drop-shadow(4px 5px 0 rgba(23, 25, 63, .3)); }
+.plans-sec .lede { max-width: 46ch; }
+.hero-stickers { display: none; }
+.m-only { display: none; }
+
+/* ---------- home: phone redesign ---------- */
+@media (max-width: 760px) {
+  .m-only { display: block; }
+  .swipe-hint { margin: 14px 0 -4px; font-size: 12.5px; font-weight: 800; letter-spacing: .08em; text-transform: uppercase; color: var(--indigo); }
+  .swipe-hint.light { color: var(--lime); }
+
+  /* hero: sticker row fills the space */
+  .hero-stickers { display: flex; justify-content: center; gap: 12px; margin: 4px 0 22px; }
+  .hero-stickers .ico { --s: 58px; }
+  .hero-stickers .ico:nth-child(odd) { transform: rotate(-6deg); }
+  .hero-stickers .ico:nth-child(even) { transform: rotate(6deg) translateY(4px); }
+
+  /* shared swipe carousel */
+  .fan, .grow-list { display: grid !important; grid-auto-flow: column; grid-template-columns: none !important; grid-auto-columns: 80%; gap: 16px; overflow-x: auto; scroll-snap-type: x mandatory; scrollbar-width: none;
+    margin-inline: calc(-1 * var(--gut)); padding-inline: var(--gut); }
+  .fan::-webkit-scrollbar, .grow-list::-webkit-scrollbar { display: none; }
+
+  /* services fan -> carousel */
+  .fan { margin-top: 20px; padding-top: 52px; padding-bottom: 26px; align-items: stretch; }
+  .fan-card { margin: 0 !important; min-height: 0; scroll-snap-align: center; transform: rotate(calc(var(--r) * .3)); padding: 62px 22px 22px; }
+  .fan-card h3 { font-size: 30px; }
+  .fan-card ul { font-size: 14.5px; }
+  .fan-card li:nth-child(n+5) { display: none; }
+
+  /* why us -> compact 2x2 */
+  .why { grid-template-columns: 1fr 1fr; gap: 22px 16px; }
+  .why article { padding-top: 14px; }
+  .why .ico { --s: 56px; margin-bottom: 10px; }
+  .why h3 { font-size: 15px; }
+  .why p { font-size: 13px; line-height: 1.4; }
+
+  /* camera window above the plans */
+  .plans-cam { position: relative; top: auto; right: auto; width: 170px; margin: 22px auto 6px; transform: rotate(4deg); }
+
+  /* growth steps -> carousel */
+  .grow-list { margin-top: 20px; padding-top: 8px; padding-bottom: 12px; grid-auto-columns: 74%; }
+  .grow-step { scroll-snap-align: center; margin-top: 0 !important; }
+  .grow-pic { max-width: none; }
+  .grow-step h3 { font-size: 28px; }
+
+  /* about: keep the stacked window inside the screen */
+  .about-win { max-width: calc(100% - 26px); transform: rotate(-1.5deg); }
+
+  /* team: tighter */
+  .member { gap: 34px; margin-top: 48px; }
+  .member-flip + .member { margin-top: 64px; }
+}
+@media (max-width: 760px) { .fan, .grow-list { justify-content: start !important; } .plans-cam { margin-bottom: 40px; } }
+@media (max-width: 760px) { .about { gap: 44px; } }
