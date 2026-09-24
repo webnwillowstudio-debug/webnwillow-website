@@ -888,3 +888,12 @@ main > section:not(:first-child), main > nav, main > div.tagband, footer { conte
   .menu-btn { padding: 6px 12px; font-size: 13px; margin-left: auto; }
   .corner { width: 58px; height: 58px; font-size: 12px; }
 }
+.contact-art { width: clamp(230px, 24vw, 330px) !important; }
+/* small phones: logo + Menu on row 1, opened menu drops to its own full-width row */
+@media (max-width: 440px) {
+  .nav { flex-wrap: wrap; row-gap: 12px; }
+  .nav .pills.main { order: 3; width: 100%; flex: 0 0 100%; }
+  .nav .pills.main .pill { width: 100%; }
+  .corner { top: 8px; transform: rotate(-10deg); }
+}
+@media (max-width: 760px) { .nav .pills.main.open { width: calc(100% + 62px); flex-basis: calc(100% + 62px); margin-right: -62px; } }
