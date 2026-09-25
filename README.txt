@@ -11,6 +11,8 @@ Pages
 - app-development.html    Android, iOS, Flutter, desktop, app maintenance
 - digital-marketing.html  Sprout / Bloom / Canopy plans + comparison table
 - it-support.html         Hosting, troubleshooting, security, domain & email, consultation
+- about.html              About us: studio story, values, team
+- blog.html               Blog: post list + full posts on one page
 - contact.html            Enquiry form (opens the visitor's email app) + socials
 
 Shared files

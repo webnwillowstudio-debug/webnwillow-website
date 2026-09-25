@@ -14,10 +14,13 @@
 
   var PAGES = [
     { id: 'home', href: 'index.html', label: 'Home' },
+    { id: 'about', href: 'about.html', label: 'About' },
+    { id: 'work', href: 'index.html#work', label: 'Work' },
     { id: 'web', href: 'web-development.html', label: 'Web', icon: 'code' },
     { id: 'apps', href: 'app-development.html', label: 'Apps', icon: 'phone' },
     { id: 'marketing', href: 'digital-marketing.html', label: 'Marketing', icon: 'megaphone' },
     { id: 'it', href: 'it-support.html', label: 'IT Support', icon: 'headset' },
+    { id: 'blog', href: 'blog.html', label: 'Blog' },
     { id: 'contact', href: 'contact.html', label: 'Contact', icon: 'mail' }
   ];
 
@@ -231,7 +234,8 @@
     '<footer class="wrap">' +
       '<div class="f-about"><a class="brand" href="index.html" aria-label="webnwillow home">' + logo + '</a>' +
         '<p>Web, mobile apps, digital marketing and IT support for businesses across the UAE, India &amp; beyond.</p></div>' +
-      '<div><h4>Services</h4><ul>' + serviceLinks + '<li><a href="contact.html">Contact us</a></li></ul></div>' +
+      '<div><h4>Services</h4><ul>' + serviceLinks + '</ul></div>' +
+      '<div><h4>Studio</h4><ul><li><a href="about.html">About us</a></li><li><a href="blog.html">Blog</a></li><li><a href="contact.html">Contact us</a></li></ul></div>' +
       '<div><h4>Follow along</h4><div class="socials">' + socials + '</div>' +
         '<a class="f-mail" href="mailto:' + SITE.email + '">' + SITE.email + '</a></div>' +
       '<div class="fine"><span>© ' + new Date().getFullYear() + ' webnwillow</span><span>Web · Apps · Marketing · IT Support</span></div>' +
