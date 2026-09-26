@@ -22,8 +22,7 @@ Shared files
 
 Edit before going live (all at the top of assets/js/site.js):
 - email:   SITE.email
-- socials: SITE.social.instagram / facebook / linkedin / pinterest
-           (currently point to the network home pages; replace with your profile URLs)
+- socials: SITE.social.instagram / facebook / linkedin
 
 Brand colours
 - Lime        #B5F800   (outer background + accents)

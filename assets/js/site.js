@@ -4,10 +4,9 @@
   var SITE = {
     email: 'hello@webnwillow.com',
     social: {
-      instagram: 'https://www.instagram.com/',
-      facebook: 'https://www.facebook.com/',
-      linkedin: 'https://www.linkedin.com/',
-      pinterest: 'https://www.pinterest.com/'
+      instagram: 'https://www.instagram.com/webnwillow/',
+      facebook: 'https://www.facebook.com/share/1CJVi62Sjr/',
+      linkedin: 'https://www.linkedin.com/company/web-n-willow/'
     }
   };
   // ========================================
@@ -253,6 +252,25 @@
       return '<a href="' + SITE.social[k] + '" target="_blank" rel="noopener">' + icon(k) + socialLabels[k] + '</a>';
     }).join('');
   });
+
+  // ----- home splash: logo intro, once per session -----
+  var intro = document.getElementById('intro');
+  var root = document.documentElement;
+  if (intro && root.classList.contains('intro-on')) {
+    var done = false, timer;
+    var finish = function () {
+      if (done) return;
+      done = true;
+      clearTimeout(timer);
+      try { sessionStorage.setItem('wnw-intro', '1'); } catch (e) {}
+      intro.classList.add('out');
+      setTimeout(function () { intro.remove(); root.classList.remove('intro-on'); }, 600);
+    };
+    intro.classList.add('go');
+    timer = setTimeout(finish, 2400);
+    intro.addEventListener('click', finish);
+    document.addEventListener('keydown', function (e) { if (e.key === 'Escape') finish(); });
+  }
 
   // ----- generated shapes: starbursts and scalloped circles -----
   function poly(n, fn) {
