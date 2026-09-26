@@ -255,8 +255,8 @@
 
   // ----- home splash: logo intro, once per session -----
   var intro = document.getElementById('intro');
-  var root = document.documentElement;
-  if (intro && root.classList.contains('intro-on')) {
+  var htmlEl = document.documentElement;
+  if (intro && htmlEl.classList.contains('intro-on')) {
     var done = false, timer;
     var finish = function () {
       if (done) return;
@@ -264,7 +264,7 @@
       clearTimeout(timer);
       try { sessionStorage.setItem('wnw-intro', '1'); } catch (e) {}
       intro.classList.add('out');
-      setTimeout(function () { intro.remove(); root.classList.remove('intro-on'); }, 600);
+      setTimeout(function () { intro.remove(); htmlEl.classList.remove('intro-on'); }, 600);
     };
     intro.classList.add('go');
     timer = setTimeout(finish, 2400);
