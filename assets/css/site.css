@@ -1029,6 +1029,7 @@ html.intro-on .intro {
 @keyframes introWipe { to { clip-path: inset(0 0 0 0); } }
 @keyframes introUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: none; } }
 @media (max-width: 560px) {
-  .intro-lock { flex-direction: column; gap: 16px; }
-  .intro-logo { width: min(78vw, 320px); }
+  .intro-lock { gap: 3vw; }
+  .intro-mark { width: 15vw; }
+  .intro-logo { width: 70vw; }
 }
