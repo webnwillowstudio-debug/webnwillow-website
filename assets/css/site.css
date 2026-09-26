@@ -1008,8 +1008,11 @@ footer .brand .logo-full { width: 230px; }
 /* ---------- home splash: logo intro (once per session, skipped for reduced motion) ---------- */
 .intro { display: none; }
 html.intro-on, html.intro-on body { overflow: hidden; }
+/* paint indigo behind mobile browser bars (iOS Safari's floating toolbar sits over the page) */
+html.intro-on { background: var(--indigo); }
 html.intro-on .intro {
-  display: grid; place-content: center; justify-items: center; gap: 22px; position: fixed; inset: 0; z-index: 1000;
+  display: grid; place-content: center; justify-items: center; gap: 22px; position: fixed; inset: 0 0 auto; height: 100vh; height: 100lvh; z-index: 1000;
+  box-shadow: 0 0 0 100vmax var(--indigo); padding-bottom: calc(100lvh - 100svh);
   background: var(--indigo); color: var(--butter); cursor: pointer;
   transition: opacity .55s ease, visibility .55s;
 }
